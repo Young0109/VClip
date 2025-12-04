@@ -1,10 +1,1 @@
-Video & Audio Extraction
-
-VideoExtract.py
-This script performs initial preprocessing on raw video files by extracting:
-
-One frame per second as .jpg images
-
-The full audio track in high-quality .wav format
-
-This provides essential input data for downstream multimodal analysis such as visual scoring, ASR transcription, and scene segmentation.
+🚀 VClip: AI-Powered Video Highlight Extraction Pipeline. A multi-modal intelligent editing system that combines Visual Analysis (Qwen-VL) and Semantic Analysis (Whisper + DeepSeek) to auto-generate viral clips from long videos. Features automatic 9:16 smart reframing for social media. Built with FastAPI & Celery.
