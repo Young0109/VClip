@@ -1,0 +1,31 @@
+numpy==1.26.4
+
+# --- AI 与多媒体处理 (AI & Multimedia Processing) ---
+torch
+torchaudio
+openai-whisper
+numba==0.58.1
+mediapipe
+demucs
+scenedetect[opencv]
+opencc-python-reimplemented
+
+# --- AI API 与 NLP (AI APIs & NLP) ---
+dashscope
+jieba
+openai
+transformers
+
+# --- 任务队列与后端 (Task Queue & Backend) ---
+celery
+redis
+
+# --- Web Server / Deployment ---
+fastapi
+gunicorn
+uvicorn[standard]
+python-multipart
+
+# --- 其他网络与数据库 (Networking & Database) ---
+requests
+pymongo
