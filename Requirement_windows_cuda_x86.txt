@@ -1,5 +1,6 @@
-# --- 指定 PyTorch 的 CUDA 官方源 (针对 RTX 5080 推荐 CUDA 12.4) ---
---extra-index-url https://download.pytorch.org/whl/cu124
+# --- 指定 PyTorch 的 CUDA 官方源 (针对 RTX 5080 推荐 CUDA 12.8) ---
+# RTX50系需12.8以上 现在只有nightly
+--extra-index-url https://download.pytorch.org/whl/cu128
 
 # --- 核心数值计算 ---
 numpy==1.26.4
