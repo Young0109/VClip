@@ -1,0 +1,37 @@
+# --- 核心数值计算 (Core Numerics) ---
+# 锁定 numpy 版本以避免 numpy 2.0 与旧版库冲突
+numpy==1.26.4 
+
+# --- AI 与多媒体处理 (AI & Multimedia Processing) ---
+# 【重要修改】M4 Mac 建议使用标准版 opencv-python，避免 headless 版的编译问题
+opencv-python
+moviepy          # 新增：clip_export.py 需要用来拼接视频和字幕
+Pillow           # 新增：图片处理依赖
+scikit-learn     # 新增：analyze_keywords.py 需要用 TF-IDF 算法
+torch
+torchaudio
+openai-whisper
+numba            # 移除特定版本锁定，让 pip 自动选择适配 M4 的版本
+mediapipe
+demucs
+scenedetect[opencv]
+
+# --- AI API 与 NLP (AI APIs & NLP) ---
+dashscope
+jieba
+openai
+transformers
+
+# --- 任务队列与后端 (Task Queue & Backend) ---
+celery
+redis
+
+# --- Web Server / Deployment ---
+fastapi
+gunicorn
+uvicorn[standard]
+python-multipart
+
+# --- 其他网络与数据库 (Networking & Database) ---
+requests
+pymongo

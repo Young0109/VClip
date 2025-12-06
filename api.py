@@ -1,30 +1,23 @@
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, File, UploadFile
 from pydantic import BaseModel
 from typing import Optional, Dict, Any 
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
-
-# --- 核心模块导入 ---
-# 【修正】从正确的 vclip_service 路径导入我们的模块
 import sys
 import os
-sys.path.append(os.path.abspath('service'))
+import shutil
+import uuid
+
+# 【修改点】删除了 sys.path.append，直接导入
 from database import create_task as db_create_task
 from database import get_task as db_get_task
 from database import update_task_as_completed, update_task_as_failed
 from tasks import process_video_task
 
-# ==========================================================
-#              【保留】您不想改动的部分
-# ==========================================================
 app = FastAPI(root_path="/vc")
 
-app.mount("/swagger-static", StaticFiles(directory="static/swagger"), name="swagger")
 
-@app.get("/docs", include_in_schema=False) # 在自动生成的文档中隐藏这个自定义接口
-async def custom_swagger_ui():
-    return FileResponse("static/swagger/index.html")
 # ==========================================================
 
 

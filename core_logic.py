@@ -5,12 +5,10 @@ import requests
 import shutil
 from datetime import timedelta
 import statistics
+import urllib.parse 
 
-sys.path.append(os.path.abspath('Video & Audio Extraction'))
-sys.path.append(os.path.abspath('Image Difference Detection'))
-sys.path.append(os.path.abspath('Semantic Analysis Pipeline'))
-sys.path.append(os.path.abspath('service'))
-
+# 【修改点】删除了所有 sys.path.append(...)，因为文件都在根目录
+# 直接导入模块
 from videoExtract import convert_to_mp4
 from videoExtract import extract_frames
 from imgDifference import detect_scene_changes
@@ -22,6 +20,8 @@ from transcription import transcribe_audio
 from segment_text import semantic_segment_final
 from scoring_pipeline import run_scoring_pipeline
 from intelligent_reframe import reframe_to_vertical_video 
+
+
 
 def download_video(video_url: str, save_dir: str) -> str | None:
     """从URL下载视频，或者直接复制本地文件。"""
